@@ -4,12 +4,14 @@ class NeuralPortfolio {
         this.isIntroSkipped = localStorage.getItem('introSkipped') === 'true';
         this.currentSection = 'home';
         this.typingTexts = [
-            'Lancement de la synchronisation neuronale...',
-            'Analyse du réseau cognitif en cours...',
-            'Profil détecté : Bahae Aouanet',
-            'Statut : Ingénieur informatique full stack',
-            'Ouverture de l\'archive mentale...',
-            'Accès autorisé ✓'
+            'Initiating neural synchronization...',
+            'Analyzing cognitive network architecture...',
+            'Profile detected: Bahae Aouanet',
+            'Status: Senior Full Stack Software Engineer',
+            'Accessing memory archives...',
+            'Biometric authentication: ✓ VERIFIED',
+            'Loading professional consciousness...',
+            'Access granted ✓'
         ];
         this.currentTextIndex = 0;
         this.currentCharIndex = 0;
