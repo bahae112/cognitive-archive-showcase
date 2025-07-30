@@ -18,167 +18,22 @@ class NeuralPortfolio {
         this.isTyping = false;
         
         this.skillsData = {
-            'React': { 
-                level: 95, 
-                years: '4 years', 
-                projects: '25+',
-                lastUsed: 'Current',
-                category: 'Frontend',
-                description: 'Advanced React development with hooks, context, performance optimization, and modern patterns.',
-                certifications: ['React Developer Certification', 'Advanced React Patterns']
-            },
-            'Vue.js': { 
-                level: 90, 
-                years: '3 years', 
-                projects: '15+',
-                lastUsed: '2 months ago',
-                category: 'Frontend',
-                description: 'Progressive Vue.js framework for building interactive and performant web applications.',
-                certifications: ['Vue.js Certified Developer']
-            },
-            'JavaScript': { 
-                level: 98, 
-                years: '6 years', 
-                projects: '50+',
-                lastUsed: 'Current',
-                category: 'Core',
-                description: 'Expert-level JavaScript including ES6+, async programming, functional programming, and advanced concepts.',
-                certifications: ['JavaScript Expert', 'ES6+ Specialist']
-            },
-            'TypeScript': { 
-                level: 92, 
-                years: '3 years', 
-                projects: '30+',
-                lastUsed: 'Current',
-                category: 'Frontend',
-                description: 'TypeScript for robust, type-safe applications with advanced typing and enterprise patterns.',
-                certifications: ['TypeScript Advanced Developer']
-            },
-            'Next.js': {
-                level: 91,
-                years: '2.5 years',
-                projects: '20+',
-                lastUsed: 'Current',
-                category: 'Frontend',
-                description: 'Full-stack React framework with SSR, SSG, API routes, and performance optimization.',
-                certifications: ['Next.js Professional']
-            },
-            'Tailwind CSS': {
-                level: 96,
-                years: '3 years',
-                projects: '35+',
-                lastUsed: 'Current',
-                category: 'Frontend',
-                description: 'Utility-first CSS framework for rapid UI development and design systems.',
-                certifications: ['Tailwind CSS Expert']
-            },
-            'Node.js': { 
-                level: 94, 
-                years: '4 years', 
-                projects: '40+',
-                lastUsed: 'Current',
-                category: 'Backend',
-                description: 'Server-side JavaScript runtime for scalable backend applications and APIs.',
-                certifications: ['Node.js Certified Developer', 'Backend Architecture']
-            },
-            'Python': { 
-                level: 88, 
-                years: '3 years', 
-                projects: '25+',
-                lastUsed: '1 month ago',
-                category: 'Backend',
-                description: 'Versatile language for web development, AI/ML, automation, and data processing.',
-                certifications: ['Python Developer', 'Django Specialist']
-            },
-            'MongoDB': { 
-                level: 90, 
-                years: '3 years', 
-                projects: '30+',
-                lastUsed: 'Current',
-                category: 'Database',
-                description: 'NoSQL database for modern, scalable applications with complex data structures.',
-                certifications: ['MongoDB Developer', 'Database Design']
-            },
-            'PostgreSQL': { 
-                level: 87, 
-                years: '3 years', 
-                projects: '20+',
-                lastUsed: '2 weeks ago',
-                category: 'Database',
-                description: 'Advanced relational database with complex queries, indexing, and performance tuning.',
-                certifications: ['PostgreSQL Administrator']
-            },
-            'Docker': { 
-                level: 89, 
-                years: '2.5 years', 
-                projects: '35+',
-                lastUsed: 'Current',
-                category: 'DevOps',
-                description: 'Containerization platform for consistent deployments and microservices architecture.',
-                certifications: ['Docker Certified Associate']
-            },
-            'AWS': { 
-                level: 82, 
-                years: '2 years', 
-                projects: '15+',
-                lastUsed: 'Current',
-                category: 'DevOps',
-                description: 'Cloud services for scalable infrastructure, storage, and serverless applications.',
-                certifications: ['AWS Solutions Architect', 'AWS Developer']
-            },
-            'Kubernetes': {
-                level: 75,
-                years: '1.5 years',
-                projects: '8+',
-                lastUsed: '3 weeks ago',
-                category: 'DevOps',
-                description: 'Container orchestration for managing scalable, resilient distributed applications.',
-                certifications: ['Kubernetes Administrator']
-            },
-            'React Native': { 
-                level: 88, 
-                years: '2.5 years', 
-                projects: '12+',
-                lastUsed: '1 month ago',
-                category: 'Mobile',
-                description: 'Cross-platform mobile development with native performance and shared codebase.',
-                certifications: ['React Native Specialist']
-            },
-            'OpenAI API': {
-                level: 89,
-                years: '1 year',
-                projects: '15+',
-                lastUsed: 'Current',
-                category: 'AI',
-                description: 'AI integration for chatbots, content generation, and intelligent applications.',
-                certifications: ['AI Integration Specialist']
-            },
-            'TensorFlow': {
-                level: 76,
-                years: '1.5 years',
-                projects: '5+',
-                lastUsed: '2 months ago',
-                category: 'AI',
-                description: 'Machine learning framework for building and training neural networks.',
-                certifications: ['TensorFlow Developer']
-            }
-        };
-        
-        // Sound effects configuration
-        this.sounds = {
-            'intro-beep': { url: 'data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp56hVFApGn+DyvmwhBi2Hyel8HAU', volume: 0.3 },
-            'button-click': { url: 'data:audio/wav;base64,UklGRkQDAABXQVZFZm10IBAAAAABAAABAHB1AACAdQAAAQAGAGRhdGEMAwAA', volume: 0.4 },
-            'button-hover': { url: 'data:audio/wav;base64,UklGRlABAABXQVZFZm10IBAAAAABAAABAHB1AACAdQAAAQAGAGRhdGEsAQAA', volume: 0.2 },
-            'filter-click': { url: 'data:audio/wav;base64,UklGRjYBAABXQVZFZm10IBAAAAABAAABAHB1AACAdQAAAQAGAGRhdGESAQAA', volume: 0.3 },
-            'skill-hover': { url: 'data:audio/wav;base64,UklGRjIBAABXQVZFZm10IBAAAAABAAABAHB1AACAdQAAAQAGAGRhdGEOAQAA', volume: 0.2 },
-            'project-hover': { url: 'data:audio/wav;base64,UklGRjoBAABXQVZFZm10IBAAAAABAAABAHB1AACAdQAAAQAGAGRhdGEWAQAA', volume: 0.25 },
-            'scan-beep': { url: 'data:audio/wav;base64,UklGRl4BAABXQVZFZm10IBAAAAABAAABAHB1AACAdQAAAQAGAGRhdGE6AQAA', volume: 0.35 },
-            'value-highlight': { url: 'data:audio/wav;base64,UklGRloBAABXQVZFZm10IBAAAAABAAABAHB1AACAdQAAAQAGAGRhdGE2AQAA', volume: 0.25 },
-            'input-focus': { url: 'data:audio/wav;base64,UklGRl4BAABXQVZFZm10IBAAAAABAAABAHB1AACAdQAAAQAGAGRhdGE6AQAA', volume: 0.2 },
-            'input-type': { url: 'data:audio/wav;base64,UklGRloBAABXQVZFZm10IBAAAAABAAABAHB1AACAdQAAAQAGAGRhdGE2AQAA', volume: 0.15 },
-            'click-demo': { url: 'data:audio/wav;base64,UklGRkQDAABXQVZFZm10IBAAAAABAAABAHB1AACAdQAAAQAGAGRhdGEMAwAA', volume: 0.4 },
-            'click-github': { url: 'data:audio/wav;base64,UklGRkQDAABXQVZFZm10IBAAAAABAAABAHB1AACAdQAAAQAGAGRhdGEMAwAA', volume: 0.35 },
-            'click-study': { url: 'data:audio/wav;base64,UklGRkQDAABXQVZFZm10IBAAAAABAAABAHB1AACAdQAAAQAGAGRhdGEMAwAA', volume: 0.3 }
+            'React': { level: 95, years: '4 ans', description: 'Framework JavaScript moderne pour interfaces utilisateur dynamiques et réactives.' },
+            'Vue.js': { level: 90, years: '3 ans', description: 'Framework progressif pour applications web interactives et performantes.' },
+            'JavaScript': { level: 98, years: '6 ans', description: 'Langage de programmation polyvalent, maîtrise ES6+ et concepts avancés.' },
+            'TypeScript': { level: 92, years: '3 ans', description: 'Superset de JavaScript avec typage statique pour code plus robuste.' },
+            'Node.js': { level: 94, years: '4 ans', description: 'Runtime JavaScript côté serveur pour applications full stack.' },
+            'Python': { level: 88, years: '3 ans', description: 'Langage polyvalent pour développement web, IA et automatisation.' },
+            'PHP': { level: 85, years: '4 ans', description: 'Langage serveur pour développement web et applications dynamiques.' },
+            'Express': { level: 93, years: '4 ans', description: 'Framework web minimaliste et flexible pour Node.js.' },
+            'MongoDB': { level: 90, years: '3 ans', description: 'Base de données NoSQL pour applications modernes et scalables.' },
+            'PostgreSQL': { level: 87, years: '3 ans', description: 'Système de gestion de base de données relationnelle avancé.' },
+            'MySQL': { level: 85, years: '4 ans', description: 'Base de données relationnelle populaire et fiable.' },
+            'Docker': { level: 89, years: '2 ans', description: 'Plateforme de conteneurisation pour déploiements cohérents.' },
+            'AWS': { level: 82, years: '2 ans', description: 'Services cloud Amazon pour infrastructure scalable.' },
+            'Git': { level: 96, years: '5 ans', description: 'Système de contrôle de version distribué, workflows avancés.' },
+            'React Native': { level: 88, years: '2 ans', description: 'Framework pour applications mobiles cross-platform.' },
+            'Flutter': { level: 80, years: '1 an', description: 'SDK Google pour applications mobiles et web.' }
         };
         
         this.init();
